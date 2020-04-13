@@ -67,16 +67,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
           </div>
         </div>
-        <!--
         <div class="input-group mb-3">
           <input type="password" class="form-control" placeholder="Retype password" name="password2">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
             </div>
-          </div>          
+          </div>
         </div>
-        -->
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">

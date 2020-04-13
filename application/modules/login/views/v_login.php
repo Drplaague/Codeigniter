@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
 
-                <form action="<?php echo base_url('login/go_login'); ?>" method="post">
+                <form action="<?php echo base_url('login/aksi_login'); ?>" method="post">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Username" name="username">
                         <div class="input-group-append">

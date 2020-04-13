@@ -13,14 +13,14 @@ class Login extends MX_Controller{
 	function index(){
 		if($this->m_login->cek_session())
         {
-            redirect(base_url('dash/dashboard'));
+            redirect(base_url('admin/dashboard'));
         }else{
             //jika session belum terdaftar, maka redirect ke halaman login
             $this->load->view("v_login");
         }
 	}
 
-	function go_login(){
+	function aksi_login(){
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		$where = array(
@@ -31,7 +31,7 @@ class Login extends MX_Controller{
 		if($cek > 0){
 			$this->session->set_userdata('username', $username);
 
-			redirect(base_url("dash/dashboard"));
+			redirect(base_url("admin/dashboard"));
 			$this->session->set_flashdata('success', 'Anda Berhasil Login');
 		}else{
 			$this->session->set_flashdata('login_failed', '<div class="alert alert-danger">Username Atau Password salah!</div>');
@@ -45,7 +45,7 @@ class Login extends MX_Controller{
 		$this->form_validation->set_rules('username', 'Username', 'required|min_length[5]|max_length[12]|is_unique[users.username]');
 		$this->form_validation->set_rules('email', 'Email', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
-		
+		$this->form_validation->set_rules('password2', 'Confirm Password', 'matches[password]');
 
 		if($this->form_validation->run() === FALSE){
 			$this->load->view('v_register', $data);
